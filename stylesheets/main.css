@@ -1,0 +1,4 @@
+img { height: 4em; }
+div { margin: 1em 2em; border: black solid; text-align: center;
+      height: 9em; width: 12em; float: left; }
+p { clear: left; }
