@@ -1,4 +1,14 @@
-img { height: 4em; }
-div { margin: 1em 2em; border: black solid; text-align: center;
-      height: 9em; width: 12em; float: left; }
-p { clear: left; }
+.container { 
+  width: 10em; 
+  height: 10em; 
+  margin: 1em;
+  text-align: center;
+  border: black solid;
+}
+#post {
+  width: 50em;
+  top: 0em;
+}
+#comments {
+  top: 15em;
+}

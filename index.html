@@ -2,26 +2,21 @@
 <html>
   <head>
     <script src="scripts/jquery-1.3.1.min.js"></script>
+    <script src="scripts/ui/jquery-ui-personalized-1.6rc6.js"></script> 
     <script src="scripts/euphy-0.1.js"></script>
+    <link type="text/css" rel="stylesheet" href="scripts/ui/theme/ui.all.css" />
     <link type="text/css" rel="stylesheet" href="/stylesheets/main.css"></link>
   </head>
   <body>
-    <div ondrop="drop(this,event)" ondragenter="return false"
-         ondragover="return false">
-      <p>Good</p>
+    <div id="post" class="container" style="position: absolute;">
+      <div contenteditable="true">
+        Post
+      </div>
     </div>
-    <div ondrop="drop(this,event)" ondragenter="return false"
-         ondragover="return false">
-      <p>Bad</p>
-    </div>
-    <div ondrop="drop(this,event)" ondragenter="return false"
-         ondragover="return false">
-      <img src="images/sunny.gif" id=sunny alt="Sunny" 
-       ondragstart="drag(this,event)">
-      <img src="images/cloudy.gif" id=cloudy alt="Cloudy" 
-       ondragstart="drag(this,event)">
-      <img src="images/hurricane.gif" id=hurricane alt="Hurricane" 
-       ondragstart="drag(this,event)">
+    <div id="comments" class="container" style="position: absolute;">
+      <div contenteditable="true">
+        Comments
+      </div>
     </div>
   </body>
 </html>
