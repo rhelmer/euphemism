@@ -8,20 +8,15 @@ from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 from google.appengine.api import memcache
 
-class Weather(webapp.RequestHandler):
+class Save(webapp.RequestHandler):
   def get(self):
-    content = memcache.get('94530')
-    if content is None:
-      url = 'http://xml.customweather.com/xml?zip_code=94530&client=alex&client_password=trust_me&product=current_conditions'
-      try:
-        result = urlfetch.fetch(url, headers={'Accept-encoding': 'gzip'})
-        content = result.content
-        if result.status_code == 200:
-          memcache.add('94530', content, 10)
-      except:
-        return
-    self.response.headers['Content-Type'] = 'text/xml'
-    self.response.out.write(content)
+    self.response.headers['Content-Type'] = 'text/html'
+    self.response.out.write('hello get')
+
+  def post(self):
+    data = self.request
+    self.response.headers['Content-Type'] = 'text/html'
+    self.response.out.write(data)
 
 class MainPage(webapp.RequestHandler):
   def get(self):
@@ -32,7 +27,7 @@ class MainPage(webapp.RequestHandler):
 
 application = webapp.WSGIApplication(
                                      [('/', MainPage),
-                                      ('/weather', Weather)],
+                                      ('/save', Save)],
                                      debug=True)
 
 def main():
