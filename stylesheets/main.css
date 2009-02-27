@@ -8,7 +8,9 @@
 #post {
   width: 50em;
   top: 0em;
+  background-color: lightblue;
 }
 #comments {
   top: 15em;
+  background-color: lightgreen;
 }
