@@ -14,3 +14,10 @@
   top: 15em;
   background-color: lightgreen;
 }
+#history {
+  float:left; 
+  width: 12em; 
+  height: 25em; 
+  text-align: center;
+  border: black solid;
+}
