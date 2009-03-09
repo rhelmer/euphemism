@@ -24,7 +24,7 @@ indexes:
   - name: app_id
     direction: desc
 
-# Used 185 times in query history.
+# Used 2 times in query history.
 - kind: Container
   properties:
   - name: dom_id

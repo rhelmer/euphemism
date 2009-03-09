@@ -8,6 +8,13 @@ function save(event, ui){
   });
 }
 
+function saveContent(event){
+  $.post("/save/content", {
+    text: event.currentTarget.childNodes[0].data,
+    dom_id: event.currentTarget.id,
+  });
+}
+
 $(document).ready(function(){
   $(".container").resizable({
     stop: save
@@ -15,9 +22,7 @@ $(document).ready(function(){
   $(".container").draggable({
     stop: save
   });
-/*
-  $(".container").keydown(function(event){
-    save('test');
+  $(".comment").keydown(function(event){
+    saveContent(event);
   });
-*/
 });

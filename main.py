@@ -14,6 +14,11 @@ class Container(db.Model):
   width = db.StringProperty()
   height = db.StringProperty()
 
+class Content(db.Model):
+  dom_id = db.StringProperty()
+  text = db.StringProperty()
+  date = db.DateTimeProperty(auto_now_add=True)
+
 class Save(webapp.RequestHandler):
   def post(self):
     container = Container()
@@ -26,6 +31,16 @@ class Save(webapp.RequestHandler):
 
     self.response.headers['Content-Type'] = 'text/html'
     self.response.out.write(container.dom_id)
+
+class SaveContent(webapp.RequestHandler):
+  def post(self):
+    content = Content()
+    content.text = self.request.get('text')
+    content.dom_id = self.request.get('id')
+    content.put()
+
+    self.response.headers['Content-Type'] = 'text/html'
+    self.response.out.write(content.text);
 
 class MainPage(webapp.RequestHandler):
   def get(self):
@@ -75,7 +90,11 @@ class MainPage(webapp.RequestHandler):
 
 def main():
   application = webapp.WSGIApplication(
-    [('/', MainPage), ('/save', Save)], debug=True)
+    [ 
+      ('/', MainPage), 
+      ('/save', Save),
+      ('/save/content', SaveContent),
+    ], debug=True)
   run_wsgi_app(application)
 
 if __name__ == "__main__":
