@@ -81,7 +81,7 @@ class MainPage(webapp.RequestHandler):
     if c2 == None:
       comment2 = 'This is comment2'
     else:
-      comment2 = c1.text
+      comment2 = c2.text
 
     template_values = {
       'post': post,
