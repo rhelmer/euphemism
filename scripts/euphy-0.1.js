@@ -11,7 +11,7 @@ function save(event, ui){
 function saveContent(event){
   $.post("/save/content", {
     text: event.currentTarget.childNodes[0].data,
-    dom_id: event.currentTarget.id,
+    id: event.currentTarget.id,
   });
 }
 

@@ -45,10 +45,6 @@ class SaveContent(webapp.RequestHandler):
 class MainPage(webapp.RequestHandler):
   def get(self):
 
-    post = 'This is the post'
-    comment1 = 'This is comment1'
-    comment2 = 'This is comment2'
-
     p_top = '0px';
     p_left = '0px';
     p_width = '';
@@ -69,10 +65,22 @@ class MainPage(webapp.RequestHandler):
       c_left = c.left
       c_width = c.width
       c_height = c.height
+
+    post = Content.gql("WHERE dom_id='p1' ORDER BY date DESC LIMIT 1").get()
+    comment1 = Content.gql("WHERE dom_id='c1' ORDER BY date DESC LIMIT 1").get()
+    comment2 = Content.gql("WHERE dom_id='c2' ORDER BY date DESC LIMIT 1").get()
+
+    if post == None:
+      post = 'This is the post'
+    if comment1 == None:
+      comment1 = 'This is comment1'
+    if comment2 == None:
+      comment2 = 'This is comment2'
+
     template_values = {
-      'post': post,
-      'comment1': comment1,
-      'comment2': comment2,
+      'post': post.text,
+      'comment1': comment1.text,
+      'comment2': comment2.text,
       'c_top': c_top,
       'c_left': c_left,
       'c_width': c_width,
