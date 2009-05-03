@@ -66,21 +66,27 @@ class MainPage(webapp.RequestHandler):
       c_width = c.width
       c_height = c.height
 
-    post = Content.gql("WHERE dom_id='p1' ORDER BY date DESC LIMIT 1").get()
-    comment1 = Content.gql("WHERE dom_id='c1' ORDER BY date DESC LIMIT 1").get()
-    comment2 = Content.gql("WHERE dom_id='c2' ORDER BY date DESC LIMIT 1").get()
+    p1 = Content.gql("WHERE dom_id='p1' ORDER BY date DESC LIMIT 1").get()
+    c1 = Content.gql("WHERE dom_id='c1' ORDER BY date DESC LIMIT 1").get()
+    c2 = Content.gql("WHERE dom_id='c2' ORDER BY date DESC LIMIT 1").get()
 
-    if post == None:
+    if p1 == None:
       post = 'This is the post'
-    if comment1 == None:
+    else:
+      post = p1.text
+    if c1 == None:
       comment1 = 'This is comment1'
-    if comment2 == None:
+    else:
+      comment1 = c1.text
+    if c2 == None:
       comment2 = 'This is comment2'
+    else:
+      comment2 = c1.text
 
     template_values = {
-      'post': post.text,
-      'comment1': comment1.text,
-      'comment2': comment2.text,
+      'post': post,
+      'comment1': comment1,
+      'comment2': comment2,
       'c_top': c_top,
       'c_left': c_left,
       'c_width': c_width,
