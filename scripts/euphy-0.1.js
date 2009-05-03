@@ -22,6 +22,10 @@ $(document).ready(function(){
   $(".container").draggable({
     stop: save
   });
+  $(".editable").editable();
+  $(".post").keydown(function(event){
+    saveContent(event);
+  });
   $(".comment").keydown(function(event){
     saveContent(event);
   });

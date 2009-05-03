@@ -2,8 +2,9 @@
 <html>
   <head>
     <script src="scripts/jquery-1.3.1.min.js"></script>
-    <script src="scripts/ui/jquery-ui-personalized-1.6rc6.js"></script> 
     <script src="scripts/euphy-0.1.js"></script>
+    <script src="scripts/ui/jquery-ui-personalized-1.6rc6.js"></script> 
+    <script src="scripts/editinplace.0.4.js"></script>
     <link type="text/css" rel="stylesheet" href="scripts/ui/theme/ui.all.css"/>
     <link type="text/css" rel="stylesheet" href="/stylesheets/main.css"/>
   </head>
@@ -13,15 +14,15 @@
                 top: {{ p_top }}; left: {{ p_left }};
                 width: {{ p_width }}; height: {{ p_height }};">
       Post
-      <p id="p1" contenteditable="true">{{ post }}</p>
+      <p id="p1" class="post editable">{{ post }}</p>
     </div>
     <div id="comments" class="container" 
      style="position: absolute; 
             top: {{ c_top }}; left: {{ c_left }};
             width: {{ c_width }}; height: {{ c_height }};">
       Comments
-      <p id="c1" contenteditable="true" class="comment">{{ comment1 }}</p>
-      <p id-"c2" contenteditable="true" class="comment">{{ comment2 }}</p>
+      <p id="c1" class="comment editable">{{ comment1 }}</p>
+      <p id-"c2" class="comment editable">{{ comment2 }}</p>
     </div>
 <!--
     <div id="history" class="control">
