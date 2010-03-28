@@ -16,8 +16,8 @@
 }
 #history {
   float:left; 
-  width: 9em; 
-  height: 14em; 
-  text-align: center;
+  width: 22em; 
+  height: 100%; 
+/*  text-align: center; */
   border: black solid;
 }
