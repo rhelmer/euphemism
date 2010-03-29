@@ -22,11 +22,18 @@ $(document).ready(function(){
   $(".container").draggable({
     stop: save
   });
-  $(".editable").editable();
   $(".post").keydown(function(event){
     saveContent(event);
   });
   $(".comment").keydown(function(event){
     saveContent(event);
+  });
+  $(".editable").editable();
+  // disable dragging so clicking on the contenteditable element works
+  $(".editable").mouseenter(function(){
+    $(".container").draggable("option", "disabled", true);
+  });
+  $(".editable").mouseleave(function(){
+    $(".container").draggable("option", "disabled", false);
   });
 });
