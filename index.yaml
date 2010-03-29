@@ -10,55 +10,47 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
-# Unused in query history -- copied from input.
 - kind: Container
   properties:
   - name: 1
   - name: id
     direction: desc
 
-# Unused in query history -- copied from input.
 - kind: Container
   properties:
   - name: dom_id
   - name: app_id
     direction: desc
 
-# Used 2 times in query history.
 - kind: Container
   properties:
   - name: dom_id
   - name: date
     direction: desc
 
-# Unused in query history -- copied from input.
 - kind: Container
   properties:
   - name: dom_id
   - name: id
     direction: desc
 
-# Unused in query history -- copied from input.
 - kind: Container
   properties:
   - name: id
   - name: ID
 
-# Unused in query history -- copied from input.
 - kind: Container
   properties:
   - name: id
   - name: ID
     direction: desc
 
-# Used 3 times in query history.
 - kind: Content
   properties:
   - name: dom_id
   - name: date
     direction: desc
 
-# Unused in query history -- copied from input.
 - kind: Greeting
   properties:
   - name: date
