@@ -23,15 +23,20 @@
     <div id="history" class="control">
       Simple blog example.
       <br>&nbsp;<br>
-      The Post and Comments windows are moveable and resizable, and the
+      The Post and Comments windows are draggable and resizable, and the
       contents are editable. The titles are not.
       <br>&nbsp;<br>
-      This window is read-only (not editable, moveable or resizable).
+      This window is read-only (not editable, draggable or resizable).
+      <br>&nbsp;<br>
+      Once user accounts are supported, the owner of this page will be
+      able to lock down elements so they cannot be dragged, resized or
+      edited by anyone out of the specified groups.
       <hr>
+      History:
       <ol>
       {% for entry in history %}
         <li>
-          changed {{ entry.date }}
+          changed {{ entry.date }}</a>
         </li>
       {% endfor %}
       <ol>
