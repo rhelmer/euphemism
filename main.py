@@ -35,8 +35,8 @@ class Save(webapp.RequestHandler):
 class SaveContent(webapp.RequestHandler):
   def post(self):
     content = Content()
-    content.text = self.request.get('text')
-    content.dom_id = self.request.get('id')
+    content.text = cgi.escape(self.request.get('text'))
+    content.dom_id = cgi.escape(self.request.get('id'))
     content.put()
 
     self.response.headers['Content-Type'] = 'text/html'
