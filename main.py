@@ -22,11 +22,11 @@ class Content(db.Model):
 class Save(webapp.RequestHandler):
   def post(self):
     container = Container()
-    container.dom_id = self.request.get('id')
-    container.top = self.request.get('top')
-    container.left = self.request.get('left')
-    container.width = self.request.get('width')
-    container.height = self.request.get('height')
+    container.dom_id = cgi.escape(self.request.get('id'))
+    container.top = cgi.escape(self.request.get('top'))
+    container.left = cgi.escape(self.request.get('left'))
+    container.width = cgi.escape(self.request.get('width'))
+    container.height = cgi.escape(self.request.get('height'))
     container.put()
 
     self.response.headers['Content-Type'] = 'text/html'
