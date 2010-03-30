@@ -95,7 +95,7 @@ class MainPage(webapp.RequestHandler):
       'p_left': p_left,
       'p_width': p_width,
       'p_height': p_height,
-      'history': Container.all().order('-date').fetch(10)
+      'history': Container.all().order('-date').fetch(10) + Content.all().order('-date').fetch(10)
     }
 
     path = os.path.join(os.path.dirname(__file__), 'index.html')
